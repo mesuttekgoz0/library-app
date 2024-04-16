@@ -38,7 +38,8 @@ class buton_komutlari():
        tür_al=Entry(frame_sag2)
        tür_al.pack()
 
-       Button(frame_sag2,text="ekle",command=kaydet_butonu).pack()
+       kaydet=Button(frame_sag2,text="ekle",command=kaydet_butonu)
+       kaydet.pack()
        def kaydet_butonu():
            kitap_adi=kitap_ad_al.get()
            yazar_ad=yazar_ad_al.get()
@@ -93,11 +94,14 @@ ana_ekran.title("kütüphane arayüzüne hoşgeldiniz")
 canvas=Canvas(ana_ekran, width=700,height=450)
 canvas.pack()
 
-frame_ust=Frame(ana_ekran, bg='light blue')
+frame_ust=Frame(ana_ekran, bg='#383E42')
 frame_ust.place(relx=0.01, rely=0.01, relheight=0.08, relwidth=1)
 
-frame_sol=Frame(ana_ekran, bg='black')
+frame_sol=Frame(ana_ekran, bg='#383E42')
 frame_sol.place(relx=0.01, rely=0.10, relheight=1.7, relwidth=0.2)
+
+frame_sag=Frame(ana_ekran, bg='light blue')
+frame_sag.place(relx=0.22, rely=0.10, relheight=1.6, relwidth=1)
 
 
 
@@ -109,13 +113,13 @@ Label(frame_ust,text="KÜTÜPHANE SİSTEMİ",font="verdana,23,bold",bg="light bl
 odunc_alma_btn= Button(frame_sol, bg="dark grey",fg="black",text="ödünç verme",font="verdana, 10",command=buton_komutlari.odunc_butonu,width=25)
 odunc_alma_btn.pack(padx=11,pady=12)
 
-liste_butonu=Button(frame_sol, bg="green",fg="black",text="kitap listesi",font="verdana, 10",command=buton_komutlari.liste_butonu,width=25)
+liste_butonu=Button(frame_sol, bg="dark grey",fg="black",text="kitap listesi",font="verdana, 10",command=buton_komutlari.liste_butonu,width=25)
 liste_butonu.pack(padx=11,pady=12)
 
-kitap_ekle=Button(frame_sol, bg="green",fg="black",text="kitap ekle",font="verdana, 10",command=buton_komutlari.ekle_butonu,width=25)
+kitap_ekle=Button(frame_sol, bg="dark grey",fg="black",text="kitap ekle",font="verdana, 10",command=buton_komutlari.ekle_butonu,width=25)
 kitap_ekle.pack(padx=11,pady=12)
 
-kitap_ara_btn=Button(frame_sol, bg="green",fg="black",text="KİTAP ARA",font="verdana, 10",command=buton_komutlari.kitap_ara,width=25)
+kitap_ara_btn=Button(frame_sol, bg="dark grey",fg="black",text="KİTAP ARA",font="verdana, 10",command=buton_komutlari.kitap_ara,width=25)
 kitap_ara_btn.pack(padx=11,pady=12)
 
 
