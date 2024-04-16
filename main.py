@@ -38,8 +38,7 @@ class buton_komutlari():
        tür_al=Entry(frame_sag2)
        tür_al.pack()
 
-       kaydet=Button(frame_sag2,text="ekle",command=kaydet_butonu)
-       kaydet.pack()
+      
        def kaydet_butonu():
            kitap_adi=kitap_ad_al.get()
            yazar_ad=yazar_ad_al.get()
@@ -52,7 +51,8 @@ class buton_komutlari():
                 dosya.write(f"ISBN: {isbn}\n")
                 dosya.write(f"Yayınevi: {yayinevi}\n")
                 dosya.write(f"Tür:{tür}")
-
+       kaydet=Button(frame_sag2,text="ekle",command=kaydet_butonu)
+       kaydet.pack()
            
            
     
@@ -100,7 +100,7 @@ frame_ust.place(relx=0.01, rely=0.01, relheight=0.08, relwidth=1)
 frame_sol=Frame(ana_ekran, bg='#383E42')
 frame_sol.place(relx=0.01, rely=0.10, relheight=1.7, relwidth=0.2)
 
-frame_sag=Frame(ana_ekran, bg='light blue')
+frame_sag=Frame(ana_ekran, bg='#383E42')
 frame_sag.place(relx=0.22, rely=0.10, relheight=1.6, relwidth=1)
 
 
