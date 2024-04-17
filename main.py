@@ -1,10 +1,60 @@
 from tkinter import *
-from tkinter import ttk
+from tkinter import ttk,messagebox
 
 
 class buton_komutlari():
     def odunc_al_btn():
-        print("a")
+        def odunc_sistemi():
+            kisi_isim = kisi_ismi_al.get()
+            kitap_isim = kitap_ismi_al.get()
+            verilis_tarihi = veriliş_tarihi_al.get()
+            
+
+            with open("kutuphane_kitap_list.txt", "r") as dosya:
+                kitap_listesi = dosya.readlines()
+
+            kitap_bulundu = False
+            for kitap in kitap_listesi:
+                if kitap_isim.lower() in kitap.lower():
+                    kitap_bulundu = True
+                    break
+
+            if kitap_bulundu:
+                with open("ödünç_alanlar.txt", "r") as odunc_dosya:
+                    odunc_alanlar = odunc_dosya.readlines()
+                    for odunc_alan in odunc_alanlar:
+                        if kitap_isim.lower() in odunc_alan.lower():
+                            messagebox.showerror("Hata", f"{kitap_isim} kitabı zaten ödünç alınmış.")
+                            return
+
+                with open("ödünç_alanlar.txt", "a") as odunc_dosya:
+                    odunc_dosya.write(f"Kitap ismi: {kitap_isim}\n")
+                    odunc_dosya.write(f"Ödünç alan kişi: {kisi_isim}\n")
+                    odunc_dosya.write(f"Veriliş tarihi: {verilis_tarihi}\n")
+                    
+
+                messagebox.showinfo("Başarılı", f"{kitap_isim} kitabı {kisi_isim} adlı kişiye ödünç verildi.")
+            else:
+                messagebox.showerror("Hata", f"{kitap_isim} kitabı bulunamadı.")
+        frame_sag5=Frame(ana_ekran, bg='#383E42')
+        frame_sag5.place(relx=0.22, rely=0.10, relheight=0.9, relwidth=0.8)
+        Label(frame_sag5,text="isim ve soyisim:",).pack()
+        kisi_ismi_al=Entry(frame_sag5)
+        kisi_ismi_al.pack()
+
+        Label(frame_sag5,text="kitap:",).pack()
+        kitap_ismi_al=Entry(frame_sag5)
+        kitap_ismi_al.pack()
+
+        Label(frame_sag5,text="tarih:",).pack()
+        veriliş_tarihi_al=Entry(frame_sag5)
+        veriliş_tarihi_al.pack()
+
+        odunc_ver_btn=Button(frame_sag5,text="ÖDÜNÇ VER",bg="#29903B")
+        odunc_ver_btn.pack()
+
+
+
     def liste_butonu():
         frame_sag3=Frame(ana_ekran, bg='#383E42')
         frame_sag3.place(relx=0.22, rely=0.10, relheight=0.9, relwidth=0.8)
@@ -64,23 +114,23 @@ class buton_komutlari():
        frame_sag2.place(relx=0.22, rely=0.10, relheight=0.9, relwidth=0.8)
        Label(frame_sag2,bg='#383E42',text="kitap adı").pack()
        kitap_ad_al=Entry(frame_sag2)
-       kitap_ad_al.pack(padx=12)
+       kitap_ad_al.pack(padx=12,pady=5)
 
        Label(frame_sag2,bg='#383E42',text="yazar adı").pack()
        yazar_ad_al=Entry(frame_sag2)
-       yazar_ad_al.pack(padx=12)
+       yazar_ad_al.pack(padx=12,pady=5)
 
        Label(frame_sag2,bg='#383E42',text="ISBN NO").pack()
        isbn_al=Entry(frame_sag2)
-       isbn_al.pack(padx=12,anchor=N)
+       isbn_al.pack(padx=12,pady=5)
 
        Label(frame_sag2,bg='#383E42',text="yayın evi").pack()
        yayin_evi_al=Entry(frame_sag2)
-       yayin_evi_al.pack(padx=12)
+       yayin_evi_al.pack(padx=12,pady=5)
 
        Label(frame_sag2,bg='#383E42',text="tür").pack()
        tür_al=Entry(frame_sag2)
-       tür_al.pack(padx=12)
+       tür_al.pack(padx=12,pady=5)
 
       
        def kaydet_butonu():
@@ -102,8 +152,8 @@ class buton_komutlari():
            tür_al.delete(0,END)
            
 
-       kaydet=Button(frame_sag2,text="ekle",command=kaydet_butonu,activebackground="yellow",bg="dark grey")
-       kaydet.pack()
+       kaydet=Button(frame_sag2,text="EKLE",command=kaydet_butonu,activebackground="yellow",bg="#29903B",width=16)
+       kaydet.pack(pady=5)
            
            
     
