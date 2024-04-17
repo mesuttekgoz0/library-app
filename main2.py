@@ -59,6 +59,7 @@ class buton_komutlari():
     def liste_butonu():
         frame_sag3=Frame(ana_ekran, bg='#383E42')
         frame_sag3.place(relx=0.22, rely=0.10, relheight=0.9, relwidth=0.8)
+        canvas.create_window((150, 45), window=frame_sag3,anchor=NW)
 
         scrolbar=ttk.Scrollbar(frame_sag3,orient="vertical",command= canvas.yview)
         canvas.configure(yscrollcommand= scrolbar.set)
@@ -69,7 +70,7 @@ class buton_komutlari():
         
         with open("kutuphane_kitap_list.txt") as dosya:
            for satır in dosya:
-               Label(frame_sag3,text=satır,font="verdana,12").pack(fill=BOTH,expand=True)
+               Label(frame_sag3,text=satır,font="verdana,8",bg='#383E42').pack(anchor='nw',padx=0,pady=0)
 
 
     

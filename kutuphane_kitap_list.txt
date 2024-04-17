@@ -61,3 +61,48 @@ Dil: Ýngilizce
 Tür: politika
 Sayfa Sayýsý: 478
 
+Ýflasýn Ertelenmesi:
+Yazar: Ýbrahim Ermenek
+ISBN: 978-605-5633-66-0
+Yayýnevi: Adalet Yayýnevi
+Yýl: 2010
+Dil: Türkçe
+Tür: Hukuk
+Sayfa Sayýsý: 437
+
+Felsefe ve þiir:
+Yazar: Friedrich Schiller Çeviren:Burhanettin Batýman
+ISBN: 978-975-386-074-9
+Yayýnevi: Yaba
+Yýl: 2011
+Dil: türkçe
+Tür: felsefe
+Sayfa Sayýsý: 135
+
+Mit ve Anlam:
+Yazar: Claude Levi Strauss Çeviren:Yavuz Demir
+ISBN: 978-605-375-268-4
+Yayýnevi: Ýthaki
+Yýl: 2013
+Dil: Türkçe
+Tür: felsefe
+Sayfa Sayýsý: 86
+
+Aþkýn Suçlarý:
+Yazar: Marquis De Sade çeviren:Cemal Süreyya
+ISBN: 975-325-369-9
+Yayýnevi: AD Kitapçýlýk
+Yýl: 1999
+Dil: Türkçe
+Tür: Roman
+Sayfa Sayýsý: 133
+
+:
+Yazar: 
+ISBN: 
+Yayýnevi: 
+Yýl: 
+Dil: 
+Tür: 
+Sayfa Sayýsý: 
+
