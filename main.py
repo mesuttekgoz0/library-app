@@ -15,7 +15,7 @@ class buton_komutlari():
         canvas.bind('<MouseWheel>', lambda event: canvas.yview_scroll(-int(event.delta /60),"units"))
         
         
-        buton_komutlari.ekle_butonu
+        
         with open("kutuphane_kitap_list.txt") as dosya:
            for satır in dosya:
                Label(frame_sag3,text=satır,font="verdana,12").pack(fill=BOTH,expand=True)
