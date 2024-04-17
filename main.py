@@ -1,42 +1,86 @@
 from tkinter import *
+from tkinter import ttk
 
 
 class buton_komutlari():
+    def odunc_al_btn():
+        print("a")
     def liste_butonu():
+        frame_sag3=Frame(ana_ekran, bg='#383E42')
+        frame_sag3.place(relx=0.22, rely=0.10, relheight=0.9, relwidth=0.8)
+
+        scrolbar=ttk.Scrollbar(frame_sag3,orient="vertical",command= canvas.yview)
+        canvas.configure(yscrollcommand= scrolbar.set)
+        scrolbar.place(relx=1,rely=0,relheight=1,anchor="ne")
+        canvas.bind('<MouseWheel>', lambda event: canvas.yview_scroll(-int(event.delta /60),"units"))
         
-        frame_sag3=Frame(ana_ekran, bg='light blue')
-        frame_sag3.place(relx=0.22, rely=0.10, relheight=1.6, relwidth=1)
+        
         buton_komutlari.ekle_butonu
         with open("kutuphane_kitap_list.txt") as dosya:
            for satır in dosya:
-               Label(frame_sag3,text=satır,font="verdana,12").pack()
+               Label(frame_sag3,text=satır,font="verdana,12").pack(fill=BOTH,expand=True)
 
 
     
-    def odunc_butonu():
-        print("a")
+    def kitap_sil_btn():
+        def silme_btn_tikla():
+            kitap_adi = silmeye_giris.get()
+            found = False
+
+            # dosyayı oku kullanıcının yazdığı kitabı sil
+            with open("kutuphane_kitap_list.txt", "r") as dosya:
+                lines = dosya.readlines()
+            with open("kutuphane_kitap_list.txt", "w") as dosya:
+                for line in lines:
+                    if kitap_adi.lower() not in line.lower():
+                        dosya.write(line)
+                    else:
+                        found = True
+
+            if found:
+                bildiri=Label(frame_sag4,text="kitap başarıyla silindi",fg="green",)
+                bildiri.after(5000,lambda: bildiri.config(text=""))
+                bildiri.pack()
+            else:
+                bildiri=Label(frame_sag4,text="kitap bulunamadı",)
+                bildiri.after(5000,lambda: bildiri.config(text=""))
+                bildiri.pack()
+            silmeye_giris.delete(0,END)
+
+        frame_sag4=Frame(ana_ekran, bg='#383E42')
+        frame_sag4.place(relx=0.22, rely=0.10, relheight=0.9, relwidth=0.8)
+
+        silme_etiketi = Label(frame_sag4,bg='#383E42', text="Silmek istediğiniz kitap adını giriniz:")
+        silme_etiketi.pack()
+
+        silmeye_giris = Entry(frame_sag4)
+        silmeye_giris.pack()
+
+        silme_buton = Button(frame_sag4, text="Sil", command=silme_btn_tikla)
+        silme_buton.pack()
+        
     def ekle_butonu():
-       frame_sag2=Frame(ana_ekran, bg='light blue')
-       frame_sag2.place(relx=0.22, rely=0.10, relheight=1.6, relwidth=1)
-       Label(frame_sag2,text="kitap adı").pack()
+       frame_sag2=Frame(ana_ekran, bg='#383E42')
+       frame_sag2.place(relx=0.22, rely=0.10, relheight=0.9, relwidth=0.8)
+       Label(frame_sag2,bg='#383E42',text="kitap adı").pack()
        kitap_ad_al=Entry(frame_sag2)
-       kitap_ad_al.pack()
+       kitap_ad_al.pack(padx=12)
 
-       Label(frame_sag2,text="yazar adı").pack()
+       Label(frame_sag2,bg='#383E42',text="yazar adı").pack()
        yazar_ad_al=Entry(frame_sag2)
-       yazar_ad_al.pack()
+       yazar_ad_al.pack(padx=12)
 
-       Label(frame_sag2,text="ISBN NO").pack()
+       Label(frame_sag2,bg='#383E42',text="ISBN NO").pack()
        isbn_al=Entry(frame_sag2)
-       isbn_al.pack()
+       isbn_al.pack(padx=12,anchor=N)
 
-       Label(frame_sag2,text="yayın evi").pack()
+       Label(frame_sag2,bg='#383E42',text="yayın evi").pack()
        yayin_evi_al=Entry(frame_sag2)
-       yayin_evi_al.pack()
+       yayin_evi_al.pack(padx=12)
 
-       Label(frame_sag2,text="tür").pack()
+       Label(frame_sag2,bg='#383E42',text="tür").pack()
        tür_al=Entry(frame_sag2)
-       tür_al.pack()
+       tür_al.pack(padx=12)
 
       
        def kaydet_butonu():
@@ -51,7 +95,14 @@ class buton_komutlari():
                 dosya.write(f"ISBN: {isbn}\n")
                 dosya.write(f"Yayınevi: {yayinevi}\n")
                 dosya.write(f"Tür:{tür}")
-       kaydet=Button(frame_sag2,text="ekle",command=kaydet_butonu)
+           kitap_ad_al.delete(0,END)
+           yazar_ad_al.delete(0,END)
+           isbn_al.delete(0,END)
+           yayin_evi_al.delete(0,END)
+           tür_al.delete(0,END)
+           
+
+       kaydet=Button(frame_sag2,text="ekle",command=kaydet_butonu,activebackground="yellow",bg="dark grey")
        kaydet.pack()
            
            
@@ -59,8 +110,8 @@ class buton_komutlari():
 
 
     def kitap_ara():
-        frame_sag1=Frame(ana_ekran, bg='light blue')
-        frame_sag1.place(relx=0.22, rely=0.10, relheight=1.6, relwidth=1)
+        frame_sag1=Frame(ana_ekran, bg='#383E42')
+        frame_sag1.place(relx=0.22, rely=0.10, relheight=0.9, relwidth=0.8)
         Label(frame_sag1, text="aramak istediğiniz kitabın adını yazınız",font="verdana, 10").pack()
 
         arama_giris = Entry(frame_sag1)
@@ -90,37 +141,41 @@ class buton_komutlari():
 
 ana_ekran = Tk()
 ana_ekran.title("kütüphane arayüzüne hoşgeldiniz")
+ana_ekran.configure(bg="black")
 
-canvas=Canvas(ana_ekran, width=700,height=450)
+canvas=Canvas(ana_ekran, width=700,height=450,bg="black",scrollregion=(0,0,0,5000))
 canvas.pack()
 
-frame_ust=Frame(ana_ekran, bg='#383E42')
+frame_ust=Frame(ana_ekran, bg='#2B2D31')
 frame_ust.place(relx=0.01, rely=0.01, relheight=0.08, relwidth=1)
 
-frame_sol=Frame(ana_ekran, bg='#383E42')
-frame_sol.place(relx=0.01, rely=0.10, relheight=1.7, relwidth=0.2)
+frame_sol=Frame(ana_ekran, bg='#2B2D31')
+frame_sol.place(relx=0.01, rely=0.10, relheight=0.9, relwidth=0.2)
 
-frame_sag=Frame(ana_ekran, bg='#383E42')
-frame_sag.place(relx=0.22, rely=0.10, relheight=1.6, relwidth=1)
+frame_sag=Frame(ana_ekran, bg='#2B2D31')
+frame_sag.place(relx=0.22, rely=0.10, relheight=0.9, relwidth=1)
 
 
 
 #üst frame tasarım
-Label(frame_ust,text="KÜTÜPHANE SİSTEMİ",font="verdana,23,bold",bg="light blue",fg="black").pack()
+Label(frame_ust,text="KÜTÜPHANE SİSTEMİ",font="arial,23,bold",bg="#2B2D31",fg="black").pack()
 
 #sol frame tasarım
 
-odunc_alma_btn= Button(frame_sol, bg="dark grey",fg="black",text="ödünç verme",font="verdana, 10",command=buton_komutlari.odunc_butonu,width=25)
-odunc_alma_btn.pack(padx=11,pady=12)
+odunc_alma_btn= Button(frame_sol, bg="dark grey",fg="black",text="ÖDÜNÇ VERME",font="verdana, 10",command=buton_komutlari.odunc_al_btn,width=25)
+odunc_alma_btn.pack(padx=11,pady=12,fill=BOTH,expand=True)
 
-liste_butonu=Button(frame_sol, bg="dark grey",fg="black",text="kitap listesi",font="verdana, 10",command=buton_komutlari.liste_butonu,width=25)
-liste_butonu.pack(padx=11,pady=12)
+liste_butonu=Button(frame_sol, bg="dark grey",fg="black",text="KİTAP LİSTESİ",font="verdana, 10",command=buton_komutlari.liste_butonu,width=25)
+liste_butonu.pack(padx=11,pady=12,fill=BOTH,expand=True)
 
-kitap_ekle=Button(frame_sol, bg="dark grey",fg="black",text="kitap ekle",font="verdana, 10",command=buton_komutlari.ekle_butonu,width=25)
-kitap_ekle.pack(padx=11,pady=12)
+kitap_ekle=Button(frame_sol, bg="dark grey",fg="black",text="KİTAP EKLE",font="verdana, 10",command=buton_komutlari.ekle_butonu,width=25)
+kitap_ekle.pack(padx=11,pady=12,fill=BOTH,expand=True)
 
 kitap_ara_btn=Button(frame_sol, bg="dark grey",fg="black",text="KİTAP ARA",font="verdana, 10",command=buton_komutlari.kitap_ara,width=25)
-kitap_ara_btn.pack(padx=11,pady=12)
+kitap_ara_btn.pack(padx=11,pady=12,fill=BOTH,expand=True)
+
+kitap_sil_btn=Button(frame_sol, bg="dark grey",fg="black",text="KİTAP SİL",font="verdana, 10",command=buton_komutlari.kitap_sil_btn,width=25)
+kitap_sil_btn.pack(padx=11,pady=12,fill=BOTH,expand=True)
 
 
 
