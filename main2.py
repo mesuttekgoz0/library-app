@@ -119,35 +119,35 @@ class buton_komutlari():
        frame_sag2.place(relx=0.22, rely=0.10, relheight=0.9, relwidth=0.8)
        Label(frame_sag2,bg='#383E42',text="KİTAP ADI").pack()
        kitap_ad_al=Entry(frame_sag2)
-       kitap_ad_al.pack(padx=12,pady=5)
+       kitap_ad_al.pack(padx=12,pady=3)
 
        Label(frame_sag2,bg='#383E42',text="YAZAR ADI").pack()
        yazar_ad_al=Entry(frame_sag2)
-       yazar_ad_al.pack(padx=12,pady=5)
+       yazar_ad_al.pack(padx=12,pady=3)
 
        Label(frame_sag2,bg='#383E42',text="ISBN NO").pack()
        isbn_al=Entry(frame_sag2)
-       isbn_al.pack(padx=12,pady=5)
+       isbn_al.pack(padx=12,pady=3)
 
        Label(frame_sag2,bg='#383E42',text="YAYIN EVİ").pack()
        yayin_evi_al=Entry(frame_sag2)
-       yayin_evi_al.pack(padx=12,pady=5)
+       yayin_evi_al.pack(padx=12,pady=3)
 
        Label(frame_sag2,bg='#383E42',text="TÜR").pack()
        tür_al=Entry(frame_sag2)
-       tür_al.pack(padx=12,pady=5)
+       tür_al.pack(padx=12,pady=3)
 
        Label(frame_sag2,bg='#383E42',text="SAYFA SAYISI").pack()
        sayfa_al=Entry(frame_sag2)
-       sayfa_al.pack(padx=12,pady=5)
+       sayfa_al.pack(padx=12,pady=3)
 
        Label(frame_sag2,bg='#383E42',text="DİL").pack()
        dil_al=Entry(frame_sag2)
-       dil_al.pack(padx=12,pady=5)
+       dil_al.pack(padx=12,pady=3)
 
        Label(frame_sag2,bg='#383E42',text="YAYIM YILI").pack()
        yil_al=Entry(frame_sag2)
-       yil_al.pack(padx=12,pady=5)
+       yil_al.pack(padx=12,pady=3)
       
        def kaydet_butonu():
            kitap_adi=kitap_ad_al.get()
@@ -180,6 +180,14 @@ class buton_komutlari():
                 dosya.write(f"Dil: {dil}\n")
                 dosya.write(f"Tür: {tür}\n")
                 dosya.write(f"Sayfa Sayısı: {sayfa_sayisi}\n\n")
+           kitap_ad_al.delete(0,END)
+           yayin_evi_al.delete(0,END)
+           yazar_ad_al.delete(0,END)
+           isbn_al.delete(0,END)
+           sayfa_al.delete(0,END)
+           yil_al.delete(0,END)
+           tür_al.delete(0,END)
+           dil_al.delete(0,END)
            
 
        kaydet=Button(frame_sag2,text="EKLE",command=kaydet_butonu,activebackground="yellow",bg="#29903B",width=16)

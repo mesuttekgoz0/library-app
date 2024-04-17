@@ -1,0 +1,63 @@
+Matematik ve sanat:
+Yazar: Ali Nesin
+ISBN: 978-605-4702-02-2
+Yayýnevi: Nesin Matematik Köyü
+Yýl: 2013
+Dil: Türkçe
+Tür: Bilim
+Sayfa Sayýsý: 194
+
+Biliþim suçlarý:
+Yazar: Murat Volkan Dülger
+ISBN: 975-347-874-7
+Yayýnevi: Seçkin
+Yýl: 2004
+Dil: Türkçe
+Tür: Hukuk
+Sayfa Sayýsý: 368
+
+Graphics and GUÝs with MATLAB:
+Yazar: Patrick Marchand,O. Thomas Holland
+ISBN: 1-58488-320-0
+Yayýnevi: Chapman & Hall/CRC
+Yýl: 2003
+Dil: Ýngilizce
+Tür: bilgisayar bilimleri
+Sayfa Sayýsý: 518
+
+bilgisayar donanýmý:
+Yazar: Ebubekir Yaþar
+ISBN: 9786055451028
+Yayýnevi: Murathan
+Yýl: 2011
+Dil: Türkçe
+Tür: bilgisayar bilimleri
+Sayfa Sayýsý: 344
+
+Hukuk rehberi: herkes için:
+Yazar: Bekir Atik
+ISBN: 978-975-464-851-5
+Yayýnevi: Yetkin
+Yýl: 2014
+Dil: Türkçe
+Tür: Hukuk
+Sayfa Sayýsý: 487
+
+Kömür jeolojisi:
+Yazar: Güner Ünalan
+ISBN: 978-605-4075-72-0
+Yayýnevi: Maden tetkik ve arama genel müdürlüðü
+Yýl: 2010
+Dil: Türkçe
+Tür: coðrafya
+Sayfa Sayýsý: 556
+
+Politics:
+Yazar: Andrew Heywood
+ISBN: 978-0-230-52497-2
+Yayýnevi: Palgrave Macmillan
+Yýl: 2007
+Dil: Ýngilizce
+Tür: politika
+Sayfa Sayýsý: 478
+
