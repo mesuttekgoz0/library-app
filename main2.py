@@ -79,12 +79,16 @@ class buton_komutlari():
             found = False #false ile başlat
             with open("kutuphane_kitap_list.txt", "r") as dosya:
                 lines = dosya.readlines()
+            a=lines.index(kitap_adi.lower())
+            k=[a,a+1,a+2,a+3,a+4,a+5,a+6,a+7]
+            for indeks in k:
+                lines.pop(indeks)
+            
             with open("kutuphane_kitap_list.txt", "w") as dosya:
                 for line in lines:
-                    if kitap_adi.lower() not in line.lower(): #eğer kitabın adı txt dosyada yoksa 
-                        dosya.write(line) #yeni bir 
-                    else:
-                        found = True  
+                    
+                    dosya.write(line)  
+                     
                     
 
 
