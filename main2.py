@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import ttk,messagebox
 
+kutuphane_kitaplari={}
 
 class buton_komutlari():
     def odunc_al_btn():
@@ -50,7 +51,7 @@ class buton_komutlari():
         veriliş_tarihi_al=Entry(frame_sag5)
         veriliş_tarihi_al.pack()
 
-        odunc_ver_btn=Button(frame_sag5,text="ÖDÜNÇ VER",bg="#29903B")
+        odunc_ver_btn=Button(frame_sag5,text="ÖDÜNÇ VER",bg="#29903B",command=odunc_sistemi)
         odunc_ver_btn.pack()
 
 
@@ -75,17 +76,17 @@ class buton_komutlari():
     def kitap_sil_btn():
         def silme_btn_tikla():
             kitap_adi = silmeye_giris.get()
-            found = False
-
-            # dosyayı oku kullanıcının yazdığı kitabı sil
+            found = False #false ile başlat
             with open("kutuphane_kitap_list.txt", "r") as dosya:
                 lines = dosya.readlines()
             with open("kutuphane_kitap_list.txt", "w") as dosya:
                 for line in lines:
-                    if kitap_adi.lower() not in line.lower():
-                        dosya.write(line)
+                    if kitap_adi.lower() not in line.lower(): #eğer kitabın adı txt dosyada yoksa 
+                        dosya.write(line) #yeni bir 
                     else:
-                        found = True
+                        found = True  
+                    
+
 
             if found:
                 bildiri=Label(frame_sag4,text="kitap başarıyla silindi",fg="green",)
@@ -112,11 +113,11 @@ class buton_komutlari():
     def ekle_butonu():
        frame_sag2=Frame(ana_ekran, bg='#383E42')
        frame_sag2.place(relx=0.22, rely=0.10, relheight=0.9, relwidth=0.8)
-       Label(frame_sag2,bg='#383E42',text="kitap adı").pack()
+       Label(frame_sag2,bg='#383E42',text="KİTAP ADI").pack()
        kitap_ad_al=Entry(frame_sag2)
        kitap_ad_al.pack(padx=12,pady=5)
 
-       Label(frame_sag2,bg='#383E42',text="yazar adı").pack()
+       Label(frame_sag2,bg='#383E42',text="YAZAR ADI").pack()
        yazar_ad_al=Entry(frame_sag2)
        yazar_ad_al.pack(padx=12,pady=5)
 
@@ -124,14 +125,25 @@ class buton_komutlari():
        isbn_al=Entry(frame_sag2)
        isbn_al.pack(padx=12,pady=5)
 
-       Label(frame_sag2,bg='#383E42',text="yayın evi").pack()
+       Label(frame_sag2,bg='#383E42',text="YAYIN EVİ").pack()
        yayin_evi_al=Entry(frame_sag2)
        yayin_evi_al.pack(padx=12,pady=5)
 
-       Label(frame_sag2,bg='#383E42',text="tür").pack()
+       Label(frame_sag2,bg='#383E42',text="TÜR").pack()
        tür_al=Entry(frame_sag2)
        tür_al.pack(padx=12,pady=5)
 
+       Label(frame_sag2,bg='#383E42',text="SAYFA SAYISI").pack()
+       sayfa_al=Entry(frame_sag2)
+       sayfa_al.pack(padx=12,pady=5)
+
+       Label(frame_sag2,bg='#383E42',text="DİL").pack()
+       dil_al=Entry(frame_sag2)
+       dil_al.pack(padx=12,pady=5)
+
+       Label(frame_sag2,bg='#383E42',text="YAYIM YILI").pack()
+       yil_al=Entry(frame_sag2)
+       yil_al.pack(padx=12,pady=5)
       
        def kaydet_butonu():
            kitap_adi=kitap_ad_al.get()
@@ -139,17 +151,31 @@ class buton_komutlari():
            isbn=isbn_al.get()
            yayinevi=yayin_evi_al.get()
            tür=tür_al.get()
-           with open("kutuphane_kitap_list.txt","w") as dosya:
+           yil=yil_al.get()
+           sayfa_sayisi=sayfa_al.get()
+           dil=dil_al.get()
+
+
+           kutuphane_kitaplari[kitap_adi] = {
+            "Yazar Adı": yazar_ad,
+            "ISBN Numarası": isbn,
+            "Yayın Evi": yayinevi,
+            "Yıl": yil,
+            "Sayfa Sayısı": sayfa_sayisi,
+            "Dil": dil,
+            "Tür": tür
+        }
+
+        # Kullanıcı girişlerini dosyaya ekle
+           with open("kutuphane_kitap_list.txt", "a") as dosya:
                 dosya.write(f"{kitap_adi}:\n")
                 dosya.write(f"Yazar: {yazar_ad}\n")
                 dosya.write(f"ISBN: {isbn}\n")
                 dosya.write(f"Yayınevi: {yayinevi}\n")
-                dosya.write(f"Tür:{tür}")
-           kitap_ad_al.delete(0,END)
-           yazar_ad_al.delete(0,END)
-           isbn_al.delete(0,END)
-           yayin_evi_al.delete(0,END)
-           tür_al.delete(0,END)
+                dosya.write(f"Yıl: {yil}\n")
+                dosya.write(f"Dil: {dil}\n")
+                dosya.write(f"Tür: {tür}\n")
+                dosya.write(f"Sayfa Sayısı: {sayfa_sayisi}\n\n")
            
 
        kaydet=Button(frame_sag2,text="EKLE",command=kaydet_butonu,activebackground="yellow",bg="#29903B",width=16)
