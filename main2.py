@@ -77,7 +77,6 @@ class buton_komutlari():
     def kitap_sil_btn():
         def silme_btn_tikla():
             kitap_adi = silmeye_giris.get()
-            found = False #false ile başlat
             with open("kutuphane_kitap_list.txt", "r") as dosya:
                 lines = dosya.readlines()
             lines = [satir.strip() for satir in lines]
@@ -91,18 +90,6 @@ class buton_komutlari():
                     
                     dosya.write(line+"\n")  
                      
-                    
-
-
-            if found:
-                bildiri=Label(frame_sag4,text="kitap başarıyla silindi",fg="green",)
-                bildiri.after(5000,lambda: bildiri.config(text=""))
-                bildiri.pack()
-            else:
-                bildiri=Label(frame_sag4,text="kitap bulunamadı",)
-                bildiri.after(5000,lambda: bildiri.config(text=""))
-                bildiri.pack()
-            silmeye_giris.delete(0,END)
 
         frame_sag4=Frame(ana_ekran, bg='#383E42')
         frame_sag4.place(relx=0.22, rely=0.10, relheight=0.9, relwidth=0.8)
