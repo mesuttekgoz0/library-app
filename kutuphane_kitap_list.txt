@@ -1,108 +1,117 @@
-Matematik ve sanat:
+Matematik ve sanat
 Yazar: Ali Nesin
 ISBN: 978-605-4702-02-2
-Yayýnevi: Nesin Matematik Köyü
-Yýl: 2013
-Dil: Türkçe
-Tür: Bilim
-Sayfa Sayýsý: 194
+Yayï¿½nevi: Nesin Matematik Kï¿½yï¿½
+Yï¿½l: 2013
+Dil: Tï¿½rkï¿½e
+Tï¿½r: Bilim
+Sayfa Sayï¿½sï¿½: 194
 
-Biliþim suçlarý:
-Yazar: Murat Volkan Dülger
+Biliï¿½im suï¿½larï¿½
+Yazar: Murat Volkan Dï¿½lger
 ISBN: 975-347-874-7
-Yayýnevi: Seçkin
-Yýl: 2004
-Dil: Türkçe
-Tür: Hukuk
-Sayfa Sayýsý: 368
+Yayï¿½nevi: Seï¿½kin
+Yï¿½l: 2004
+Dil: Tï¿½rkï¿½e
+Tï¿½r: Hukuk
+Sayfa Sayï¿½sï¿½: 368
 
-Graphics and GUÝs with MATLAB:
+Graphics and GUï¿½s with MATLAB
 Yazar: Patrick Marchand,O. Thomas Holland
 ISBN: 1-58488-320-0
-Yayýnevi: Chapman & Hall/CRC
-Yýl: 2003
-Dil: Ýngilizce
-Tür: bilgisayar bilimleri
-Sayfa Sayýsý: 518
+Yayï¿½nevi: Chapman & Hall/CRC
+Yï¿½l: 2003
+Dil: ï¿½ngilizce
+Tï¿½r: bilgisayar bilimleri
+Sayfa Sayï¿½sï¿½: 518
 
-bilgisayar donanýmý:
-Yazar: Ebubekir Yaþar
+bilgisayar donanï¿½mï¿½
+Yazar: Ebubekir Yaï¿½ar
 ISBN: 9786055451028
-Yayýnevi: Murathan
-Yýl: 2011
-Dil: Türkçe
-Tür: bilgisayar bilimleri
-Sayfa Sayýsý: 344
+Yayï¿½nevi: Murathan
+Yï¿½l: 2011
+Dil: Tï¿½rkï¿½e
+Tï¿½r: bilgisayar bilimleri
+Sayfa Sayï¿½sï¿½: 344
 
-Hukuk rehberi: herkes için:
+Hukuk rehberi: herkes iï¿½in
 Yazar: Bekir Atik
 ISBN: 978-975-464-851-5
-Yayýnevi: Yetkin
-Yýl: 2014
-Dil: Türkçe
-Tür: Hukuk
-Sayfa Sayýsý: 487
+Yayï¿½nevi: Yetkin
+Yï¿½l: 2014
+Dil: Tï¿½rkï¿½e
+Tï¿½r: Hukuk
+Sayfa Sayï¿½sï¿½: 487
 
-Kömür jeolojisi:
-Yazar: Güner Ünalan
+Kï¿½mï¿½r jeolojisi
+Yazar: Gï¿½ner ï¿½nalan
 ISBN: 978-605-4075-72-0
-Yayýnevi: Maden tetkik ve arama genel müdürlüðü
-Yýl: 2010
-Dil: Türkçe
-Tür: coðrafya
-Sayfa Sayýsý: 556
+Yayï¿½nevi: Maden tetkik ve arama genel mï¿½dï¿½rlï¿½ï¿½ï¿½
+Yï¿½l: 2010
+Dil: Tï¿½rkï¿½e
+Tï¿½r: coï¿½rafya
+Sayfa Sayï¿½sï¿½: 556
 
-Politics:
+Politics
 Yazar: Andrew Heywood
 ISBN: 978-0-230-52497-2
-Yayýnevi: Palgrave Macmillan
-Yýl: 2007
-Dil: Ýngilizce
-Tür: politika
-Sayfa Sayýsý: 478
+Yayï¿½nevi: Palgrave Macmillan
+Yï¿½l: 2007
+Dil: ï¿½ngilizce
+Tï¿½r: politika
+Sayfa Sayï¿½sï¿½: 478
 
-Ýflasýn Ertelenmesi:
-Yazar: Ýbrahim Ermenek
+ï¿½flasï¿½n Ertelenmesi
+Yazar: ï¿½brahim Ermenek
 ISBN: 978-605-5633-66-0
-Yayýnevi: Adalet Yayýnevi
-Yýl: 2010
-Dil: Türkçe
-Tür: Hukuk
-Sayfa Sayýsý: 437
+Yayï¿½nevi: Adalet Yayï¿½nevi
+Yï¿½l: 2010
+Dil: Tï¿½rkï¿½e
+Tï¿½r: Hukuk
+Sayfa Sayï¿½sï¿½: 437
 
-Felsefe ve þiir:
-Yazar: Friedrich Schiller Çeviren:Burhanettin Batýman
+
+ï¿½flasï¿½n Ertelenmesi
+Yazar: ï¿½brahim Ermenek
+ISBN: 978-605-5633-66-0
+Yayï¿½nevi: Adalet Yayï¿½nevi
+Yï¿½l: 2010
+Dil: Tï¿½rkï¿½e
+Tï¿½r: Hukuk
+Sayfa Sayï¿½sï¿½: 437
+
+Felsefe ve ï¿½iir
+Yazar: Friedrich Schiller ï¿½eviren:Burhanettin Batï¿½man
 ISBN: 978-975-386-074-9
-Yayýnevi: Yaba
-Yýl: 2011
-Dil: türkçe
-Tür: felsefe
-Sayfa Sayýsý: 135
+Yayï¿½nevi: Yaba
+Yï¿½l: 2011
+Dil: tï¿½rkï¿½e
+Tï¿½r: felsefe
+Sayfa Sayï¿½sï¿½: 135
 
-Mit ve Anlam:
-Yazar: Claude Levi Strauss Çeviren:Yavuz Demir
+Mit ve Anlam
+Yazar: Claude Levi Strauss ï¿½eviren:Yavuz Demir
 ISBN: 978-605-375-268-4
-Yayýnevi: Ýthaki
-Yýl: 2013
-Dil: Türkçe
-Tür: felsefe
-Sayfa Sayýsý: 86
+Yayï¿½nevi: ï¿½thaki
+Yï¿½l: 2013
+Dil: Tï¿½rkï¿½e
+Tï¿½r: felsefe
+Sayfa Sayï¿½sï¿½: 86
 
-Aþkýn Suçlarý:
-Yazar: Marquis De Sade çeviren:Cemal Süreyya
+Aï¿½kï¿½n Suï¿½larï¿½
+Yazar: Marquis De Sade ï¿½eviren:Cemal Sï¿½reyya
 ISBN: 975-325-369-9
-Yayýnevi: AD Kitapçýlýk
-Yýl: 1999
-Dil: Türkçe
-Tür: Roman
-Sayfa Sayýsý: 133
+Yayï¿½nevi: AD Kitapï¿½ï¿½lï¿½k
+Yï¿½l: 1999
+Dil: Tï¿½rkï¿½e
+Tï¿½r: Roman
+Sayfa Sayï¿½sï¿½: 133
 
-:
+
 Yazar: 
 ISBN: 
-Yayýnevi: 
-Yýl: 
+Yayï¿½nevi: 
+Yï¿½l: 
 Dil: 
-Tür: 
-Sayfa Sayýsý: 
-
+Tï¿½r: 
+Sayfa Sayï¿½sï¿½:

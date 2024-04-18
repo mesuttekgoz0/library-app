@@ -59,7 +59,7 @@ class buton_komutlari():
     def liste_butonu():
         frame_sag3=Frame(ana_ekran, bg='#383E42')
         frame_sag3.place(relx=0.22, rely=0.10, relheight=0.9, relwidth=0.8)
-        canvas.create_window((150, 45), window=frame_sag3,anchor=NW)
+        canvas.create_window((150, 45), window=frame_sag3,anchor=NW,width=550)
 
         scrolbar=ttk.Scrollbar(frame_sag3,orient="vertical",command= canvas.yview)
         canvas.configure(yscrollcommand= scrolbar.set)
@@ -70,7 +70,7 @@ class buton_komutlari():
         
         with open("kutuphane_kitap_list.txt") as dosya:
            for satır in dosya:
-               Label(frame_sag3,text=satır,font="verdana,8",bg='#383E42').pack(anchor='nw',padx=0,pady=0)
+               Label(frame_sag3,text=satır,font="verdana,8",bg='#383E42').pack()
 
 
     
@@ -80,7 +80,8 @@ class buton_komutlari():
             found = False #false ile başlat
             with open("kutuphane_kitap_list.txt", "r") as dosya:
                 lines = dosya.readlines()
-            a=lines.index(kitap_adi.lower())
+            lines = [satir.strip() for satir in lines]
+            a=lines.index(kitap_adi)
             k=[a,a+1,a+2,a+3,a+4,a+5,a+6,a+7]
             for indeks in k:
                 lines.pop(indeks)
@@ -88,7 +89,7 @@ class buton_komutlari():
             with open("kutuphane_kitap_list.txt", "w") as dosya:
                 for line in lines:
                     
-                    dosya.write(line)  
+                    dosya.write(line+"\n")  
                      
                     
 
@@ -173,7 +174,7 @@ class buton_komutlari():
 
         # Kullanıcı girişlerini dosyaya ekle
            with open("kutuphane_kitap_list.txt", "a") as dosya:
-                dosya.write(f"{kitap_adi}:\n")
+                dosya.write(f"{kitap_adi}\n")
                 dosya.write(f"Yazar: {yazar_ad}\n")
                 dosya.write(f"ISBN: {isbn}\n")
                 dosya.write(f"Yayınevi: {yayinevi}\n")
