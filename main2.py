@@ -79,22 +79,32 @@ class buton_komutlari():
             kitap_adi = silmeye_giris.get()
             with open("kutuphane_kitap_list.txt", "r") as dosya:
                 lines = dosya.readlines()
-            lines = [satir.strip() for satir in lines]
-            a=lines.index(kitap_adi)
-            k=[a,a+1,a+2,a+3,a+4,a+5,a+6,a+7]
-            for indeks in k:
-                lines.pop(indeks)
-            
-            with open("kutuphane_kitap_list.txt", "w") as dosya:
-                for line in lines:
-                    
-                    dosya.write(line+"\n")  
-                     
 
-        frame_sag4=Frame(ana_ekran, bg='#383E42')
+            # Kitap adına göre ilgili satırların indekslerini bul
+            kitap_index = -1
+            for i, line in enumerate(lines):
+                if kitap_adi in line:
+                    kitap_index = i
+                    break
+
+            # İlgili satırları sil
+            if kitap_index != -1:
+                for _ in range(8):  # Her kitap 8 satır içeriyor, bu yüzden 8 satır silinecek
+                    lines.pop(kitap_index)
+
+                # Dosyayı güncelle
+                with open("kutuphane_kitap_list.txt", "w") as dosya:
+                    for line in lines:
+                        dosya.write(line)
+                
+                messagebox.showinfo("Başarılı", f"{kitap_adi} kitabı silindi.")
+            else:
+                messagebox.showerror("Hata", f"{kitap_adi} kitabı bulunamadı.")
+
+        frame_sag4 = Frame(ana_ekran, bg='#383E42')
         frame_sag4.place(relx=0.22, rely=0.10, relheight=0.9, relwidth=0.8)
 
-        silme_etiketi = Label(frame_sag4,bg='#383E42', text="Silmek istediğiniz kitap adını giriniz:")
+        silme_etiketi = Label(frame_sag4, bg='#383E42', text="Silmek istediğiniz kitap adını giriniz:")
         silme_etiketi.pack()
 
         silmeye_giris = Entry(frame_sag4)
@@ -102,6 +112,7 @@ class buton_komutlari():
 
         silme_buton = Button(frame_sag4, text="Sil", command=silme_btn_tikla)
         silme_buton.pack()
+
         
     def ekle_butonu():
        frame_sag2=Frame(ana_ekran, bg='#383E42')
@@ -205,8 +216,10 @@ class buton_komutlari():
                         break
                 if not found:
                     sonuc = f"'{kitap_ara}' kitabı kütüphanede bulunamadı"
-            Label(frame_sag1,text=sonuc)
-        Button(frame_sag1,text="ara",font="verdana,11",command=kitap_ara_buton()).pack()    
+            sonuc_etiketi = Label(frame_sag1, text=sonuc) # etiketi değişkene atayıp pack ettim
+            sonuc_etiketi.pack()
+        Button(frame_sag1,text="ara",font="verdana,11",command=kitap_ara_buton).pack()
+    
         
 
         
